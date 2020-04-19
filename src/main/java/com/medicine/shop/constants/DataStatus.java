@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
  * @Date 2020/3/28 14:30
  **/
 @AllArgsConstructor
-public enum DateStatus implements Enums{
+public enum DataStatus implements Enums{
 
     VALID(1,"有效的"),
     INVALID(0,"无效的");

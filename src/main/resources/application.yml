@@ -25,7 +25,7 @@ spring:
 
 # 上传文件相关配置 F:/image/
 upload:
-  filePath: /home/image/
+  filePath: /home/image/medicene
 
 
 logging:

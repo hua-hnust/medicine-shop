@@ -9,6 +9,6 @@ public class CommonConstants {
     /**
      * token过期时间
      **/
-    public final static int TOKEN_EXPIRE_TIME = 15 * 60 * 1000;
+    public final static int TOKEN_EXPIRE_TIME = 30 * 60 * 1000;
 
 }
