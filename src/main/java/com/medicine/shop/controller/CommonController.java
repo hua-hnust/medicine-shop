@@ -1,6 +1,5 @@
 package com.medicine.shop.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.medicine.shop.annotation.OpenApi;
 import com.medicine.shop.configurations.UploadConfiguration;
 import com.medicine.shop.constants.CommonConstants;
@@ -9,7 +8,6 @@ import com.medicine.shop.dto.req.RegisterDTO;
 import com.medicine.shop.dto.req.UpdatePasswordDTO;
 import com.medicine.shop.dto.res.LoginInfoDTO;
 import com.medicine.shop.entity.User;
-import com.medicine.shop.mapper.UserMapper;
 import com.medicine.shop.service.AuthService;
 import com.medicine.shop.service.UserService;
 import com.medicine.shop.util.Exceptions;
@@ -43,9 +41,6 @@ public class CommonController {
 
     @Resource
     private UserService userService;
-
-    @Resource
-    private UserMapper userMapper;
 
     /**
      *  注册接口
@@ -119,14 +114,11 @@ public class CommonController {
 
     /**
      *  检查token是否有效
-     * @param token
      * @return
      */
     @RequestMapping("check-token")
-    public Boolean checkToken(@RequestParam("token")String token){
-        User query = new User();
-        query.setToken(token);
-        User user = userMapper.selectOne(new QueryWrapper<>(query));
+    public Boolean checkToken(){
+        User user = userService.currentUser();
         return user != null;
     }
 

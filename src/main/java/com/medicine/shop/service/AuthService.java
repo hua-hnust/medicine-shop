@@ -112,6 +112,7 @@ public class AuthService {
                 token(token).
                 userType(user1.getType()).
                 userName(user1.getName()).
+                headImage(user1.getHeadImage()).
                 roleDesc(userType == null ? "未知" : userType.getDesc()).
                 build();
 
