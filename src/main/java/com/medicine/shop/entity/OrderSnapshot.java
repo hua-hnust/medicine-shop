@@ -8,29 +8,23 @@ import lombok.*;
 
 import java.util.Date;
 
-/** 用户
+/**  订单快照(记录下单时商品、订单、地址信息)
  * @Author xhua
- * @Date 2020/3/22 0:25
+ * @Date 2020/4/26 15:55
  **/
-@TableName("user")
+@TableName("order_snapshot")
 @Data
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class OrderSnapshot {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String name;
-    private String phone;
-    private String cardId;
-    private String headImage;
-    private String password;
-    private Integer type;
-    private String token;
-    private Integer status;
-    private Date tokenExpireTime;
+    private Integer userId;
+    private Long orderNo;
+    private String content;
     private Date createTime;
     @TableField(update = "now()")
     private Date updateTime;

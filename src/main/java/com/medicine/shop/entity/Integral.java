@@ -8,29 +8,23 @@ import lombok.*;
 
 import java.util.Date;
 
-/** 用户
+/**  积分表
  * @Author xhua
- * @Date 2020/3/22 0:25
+ * @Date 2020/4/26 15:47
  **/
-@TableName("user")
+@TableName("integral")
 @Data
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Integral {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String name;
-    private String phone;
-    private String cardId;
-    private String headImage;
-    private String password;
-    private Integer type;
-    private String token;
-    private Integer status;
-    private Date tokenExpireTime;
+    private Integer userId;
+    private Integer productId;
+    private Integer integral;
     private Date createTime;
     @TableField(update = "now()")
     private Date updateTime;

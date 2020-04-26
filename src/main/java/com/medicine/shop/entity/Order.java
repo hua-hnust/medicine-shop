@@ -8,29 +8,26 @@ import lombok.*;
 
 import java.util.Date;
 
-/** 用户
+/**  订单
  * @Author xhua
- * @Date 2020/3/22 0:25
+ * @Date 2020/4/26 15:25
  **/
-@TableName("user")
+@TableName("order")
 @Data
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Order {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String name;
-    private String phone;
-    private String cardId;
-    private String headImage;
-    private String password;
-    private Integer type;
-    private String token;
-    private Integer status;
-    private Date tokenExpireTime;
+    private Integer userId;
+    private Long orderNo;
+    private Integer productId;
+    private Double payAmount;
+    private Integer addressId;
+    private Integer orderStatus;
     private Date createTime;
     @TableField(update = "now()")
     private Date updateTime;

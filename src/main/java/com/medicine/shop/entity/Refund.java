@@ -8,29 +8,25 @@ import lombok.*;
 
 import java.util.Date;
 
-/** 用户
+/**  退款表
  * @Author xhua
- * @Date 2020/3/22 0:25
+ * @Date 2020/4/26 15:51
  **/
-@TableName("user")
+@TableName("refund")
 @Data
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Refund {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String name;
-    private String phone;
-    private String cardId;
-    private String headImage;
-    private String password;
-    private Integer type;
-    private String token;
+    private Integer userId;
+    private Long orderNo;
+    private String refundReason;
+    private Integer verifyUserId;
     private Integer status;
-    private Date tokenExpireTime;
     private Date createTime;
     @TableField(update = "now()")
     private Date updateTime;
